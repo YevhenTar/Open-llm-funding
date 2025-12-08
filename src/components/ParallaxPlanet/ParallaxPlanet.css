@@ -1,0 +1,13 @@
+.planet-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 900px;
+    pointer-events: none;
+    z-index: -3;
+}
+
+.planet-fixed {
+    pointer-events: none;
+    will-change: transform;
+}

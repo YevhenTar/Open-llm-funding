@@ -1,0 +1,54 @@
+.cloud-layers {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.cloud-wrapper {
+    position: absolute;
+    will-change: transform;
+}
+
+.blue-wrapper {
+    top: -34%;
+    left: 16%;
+}
+
+
+.brown-wrapper {
+    bottom: 46%;
+    left: -7%;
+}
+
+.cloud {
+    position: absolute;
+    user-select: none;
+    will-change: transform;
+}
+
+.dark-blue-cloud-layer {
+    width: 900px;
+    opacity: 0.9;
+}
+
+.brown-cloud-layer {
+    width: 900px;
+    opacity: 0.9;
+}
+
+
+@media screen and (orientation: landscape) and (min-width: 480px) and (max-width: 1024px) and (max-height: 800px) {
+    .dark-blue-cloud-layer {
+        width: 780px;
+        opacity: 0.9;
+    }
+
+    .brown-cloud-layer {
+        width: 780px;
+        opacity: 0.9;
+    }
+}
+
+
+
