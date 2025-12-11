@@ -1,0 +1,19 @@
+/* .earth-parallax-img {
+    position: absolute;
+    bottom: -800px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: -1;
+} */
+
+.earth-parallax-img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+

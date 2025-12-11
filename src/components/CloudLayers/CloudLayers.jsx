@@ -34,7 +34,7 @@ const CloudLayers = ({ isActivated }) => {
 
 
     useEffect(() => {
-        if (isActivated) return; 
+        if (isActivated) return;
 
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -42,14 +42,21 @@ const CloudLayers = ({ isActivated }) => {
             const poseBlue = scrollY > THRESHOLD ? ACTIVE_BLUE.current : DEFAULT.current;
             const poseBrown = scrollY > THRESHOLD ? ACTIVE_BROWN.current : DEFAULT.current;
 
+            // вычисляем вертикальный параллакс, ускоренный
+            const speed = 1.8;
+            const parallaxYBlue = -scrollY * speed;
+            const parallaxYBrown = -scrollY * speed * 0.7; // глубина
+
             gsap.to(blueImg.current, {
                 ...poseBlue,
+                y: poseBlue.y + parallaxYBlue, // прибавляем вертикальный параллакс
                 duration: 0.6,
                 ease: "power3.out"
             });
 
             gsap.to(brownImg.current, {
                 ...poseBrown,
+                y: poseBrown.y + parallaxYBrown,
                 duration: 0.6,
                 ease: "power3.out"
             });

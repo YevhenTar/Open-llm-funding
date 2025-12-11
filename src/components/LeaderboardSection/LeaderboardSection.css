@@ -1,0 +1,138 @@
+.leaderboard-content{
+    padding: 60px 0;
+}
+
+.leaderboard-content__main-table{
+    margin-bottom: 32px;
+}
+
+.leaderbord-content__headline-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.leaderbord-content__headline{
+    font-family: "Clash Grotesk";
+    font-size: 64px;
+    font-weight: 500;
+}
+
+.leaderbord-content__button{
+    padding: 23px 24px;
+}
+
+.leaderboard-content__description{
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.row-grid {
+    display: grid;
+    grid-template-columns:
+        24px    /* direction */
+        32px    /* # */
+        minmax(326px, 1fr)     /* model name */
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        minmax(100px, 1fr);  /* usage */
+    gap: 12px;
+    padding: 22px 18px;
+    align-items: center;
+}
+
+.main-table__header {
+    font-size: 16px;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    color: #8F99B0;
+    padding: 23px 18px;
+}
+
+.header-cell:nth-child(n + 4) {
+    justify-self: end;
+    text-align: right;
+}
+
+.main-table__button-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px; 
+}
+
+
+.full-leaderboard-btn {
+    padding: 14px 24px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s ease;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* .full-leaderboard-btn:hover {
+    background: #4a5fff22;
+} */
+
+/* .full-leaderboard-btn.active {
+    background: #4a5fff33;
+} */
+
+.main-table__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* transition: background 0.2s ease, border 0.2s ease; */
+}
+
+/* .main-table__button:hover:not(.disabled) {
+    background: #2a2a2a;
+    border-color: #555;
+}
+
+.main-table__button.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+} */
+
+
+.main-table__button-img {
+    width: inherit;
+    height: inherit;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+
+.main-table__button.expanded .main-table__button-img {
+    transform: rotate(0deg);
+}
+
+.main-table__body {
+    max-height: none;
+    overflow: visible;
+    transition: max-height 0.3s ease;
+}
+
+.main-table__body.scroll-mode {
+    max-height: 544px; /* видимо 8 строк */
+    overflow-y: auto;
+    padding-right: 4px;
+}

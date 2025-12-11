@@ -1,0 +1,55 @@
+.projects-block { 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    overflow-x: hidden;
+} 
+
+.projects-wrap{ 
+    width: 100%;
+} 
+
+.projects-wrap__headline{ 
+    font-family: "Clash Grotesk"; 
+    font-size: 48px; 
+    font-weight: 500; 
+    text-align: center; 
+    margin-bottom: 48px; 
+}
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden; /* обязательно, чтобы бесконечная лента выглядела аккуратно */
+    position: relative;
+}
+
+.carousel {
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    width: 100%;
+    justify-content: space-evenly; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    width: max-content; /* ключ для бесконечной карусели */
+    will-change: transform;
+}
+
+.carousel__item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .carousel__item img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+} */
+

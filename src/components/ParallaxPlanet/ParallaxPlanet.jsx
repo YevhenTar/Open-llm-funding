@@ -12,10 +12,10 @@ const ParallaxPlanet = ({ lift }) => {
     const liftRef = useRef(0);
 
     useLayoutEffect(() => {
-        const speed = 1.4;
+        const speed = 1.8;
 
         const tween = gsap.to(wrapperRef.current, {
-            y: () => -(document.body.scrollHeight * 0.1 * speed),
+            y: () => -(document.body.scrollHeight * 0.26 * speed),
             ease: "none",
             scrollTrigger: {
                 trigger: document.body,

@@ -1,0 +1,27 @@
+.main-table__row {
+    font-size: 16px;
+    line-height: 1;
+
+}
+
+.main-table__body .main-table__row:nth-child(odd) {
+    background: #C9D9FF14;
+}
+
+.row-grid .row-cell:nth-child(n + 4) {
+    justify-self: end;
+    text-align: right;
+}
+
+.cell_name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cell_direction {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

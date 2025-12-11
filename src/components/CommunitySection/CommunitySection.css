@@ -1,0 +1,98 @@
+.community-block{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.community-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    padding: 80px 0;
+}
+
+.community-content__info-wrap{
+    flex: 1 1 65%; /* занимает большую часть контейнера */
+    max-width: 800px; /* чтобы строки не были слишком широкими */
+}
+
+.community-content__headline{
+    font-family: "Clash Grotesk";
+    font-size: 64px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.community-content__description-block{
+    margin-bottom: 32px;
+}
+
+.community-content__description-text{
+    line-height: 1.3;
+}
+
+.community-content__description-text:first-child{
+    margin-bottom: 16px;
+}
+
+.community-content__social-media{
+    display: flex;
+    flex-direction: row;
+    gap: 32px
+}
+
+.social-media__btn{
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+.community-content__img-wrap{
+    flex: 1 1 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.community-content__moon-img{
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Стартовые состояния */
+.community-content__info-wrap.animated-block {
+    transform: translateY(120px);
+}
+
+.community-content__img-wrap.animated-block {
+    transform: translateX(0); /* старт по центру */
+}
+
+/* Появление (ScrollOut) */
+.community-content__info-wrap.animated-block[data-scroll="in"] {
+    transform: translateY(0);
+}
+
+.community-content__img-wrap.animated-block[data-scroll="in"] {
+    transform: translateX(0);
+}
+
+/* Уход (ScrollOut) */
+.community-content__info-wrap.animated-block[data-scroll="out"] {
+    transform: translateY(-120px);
+}
+
+.community-content__img-wrap.animated-block[data-scroll="out"] {
+    transform: translateX(120px);
+}
+
+/* Плавность перехода */
+.animated-block {
+    transition: transform 0.8s ease;
+    will-change: transform;
+}

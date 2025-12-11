@@ -1,9 +1,9 @@
 import React from 'react';
 import './OverviewSection.css';
 
-const OverviewSection = () => {
+const OverviewSection = ({ sectionRef }) => {
     return (
-        <div className="overview-block" >
+        <div className="overview-block" ref={sectionRef}>
             <div className="main-container">
                 <div className="overview-content">
                     <h2 className="overview-content__headline">
