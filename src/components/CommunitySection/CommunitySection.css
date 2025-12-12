@@ -1,98 +1,335 @@
-.community-block{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+.community-block{ 
+    width: 100%; 
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    overflow: hidden; 
+} 
+
+.community-content{ 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 40px; width: 100%; 
+    padding: 80px 0; 
+} 
+
+.community-content__info-wrap{ 
+    flex: 1 1 65%; 
+    max-width: 800px; 
+} 
+
+.community-content__headline{ 
+    font-family: "Clash Grotesk"; 
+    font-size: 64px; 
+    font-weight: 500; 
+    margin-bottom: 32px; 
+} 
+
+.community-content__description-block{ 
+    margin-bottom: 32px; 
+} 
+
+.community-content__description-text{ 
+    line-height: 1.3; 
+} 
+
+.community-content__description-text:first-child{ 
+    margin-bottom: 16px; 
+} 
+
+.community-content__social-media{ 
+    display: flex; 
+    flex-direction: row; 
+    gap: 32px 
+} 
+
+.social-media__btn{ 
+    width: 64px; 
+    height: 64px; 
+    cursor: pointer; 
+} 
+
+.community-content__img-wrap{ 
+    flex: 1 1 35%; 
+    display: flex; 
+    justify-content: flex-end; 
+} 
+
+.community-content__moon-img{ 
+    width: 100%; 
+    max-width: 460px; 
+    height: auto; 
+    object-fit: contain; 
+} 
+
+.community-content__info-wrap.animated-block { 
+    transform: translateX(-120px); 
+} 
+
+.community-content__img-wrap.animated-block { 
+    transform: translateX(120px); 
+} 
+
+.community-content__info-wrap.animated-block[data-scroll="in"] { 
+    transform: translateX(0); 
+} 
+
+.community-content__img-wrap.animated-block[data-scroll="in"] { 
+    transform: translateX(0); 
+} 
+
+.community-content__info-wrap.animated-block[data-scroll="out"] { 
+    transform: translateX(-120px); 
+} 
+
+.community-content__img-wrap.animated-block[data-scroll="out"] { 
+    transform: translateX(120px); 
+} 
+
+.animated-block { 
+    transition: transform 0.8s ease; 
+    will-change: transform; 
 }
 
-.community-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-    padding: 80px 0;
+@media screen and (min-width: 1025px) and (max-height: 800px) {
+    .community-content {
+        padding: 60px 0;
+        gap: 32px;
+    }
+
+    .community-content__headline {
+        font-size: 56px;
+        margin-bottom: 24px;
+    }
+
+    .community-content__moon-img {
+        max-width: 380px;
+    }
 }
 
-.community-content__info-wrap{
-    flex: 1 1 65%; /* занимает большую часть контейнера */
-    max-width: 800px; /* чтобы строки не были слишком широкими */
+@media screen and (min-width: 1025px) and (max-height: 700px) {
+    .community-content {
+        padding: 40px 0;
+        gap: 28px;
+    }
+
+    .community-content__headline {
+        font-size: 48px;
+    }
+
+    .community-content__moon-img {
+        max-width: 340px;
+    }
 }
 
-.community-content__headline{
-    font-family: "Clash Grotesk";
-    font-size: 64px;
-    font-weight: 500;
-    margin-bottom: 32px;
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+    .community-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 48px;
+        padding: 50px 0;
+    }
+
+    .community-content__info-wrap {
+        max-width: 600px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .community-content__headline {
+        font-size: 56px;
+    }
+
+    .community-content__moon-img {
+        max-width: 315px;
+    }
+
+    .community-content__img-wrap {
+        justify-content: center;
+    }
+
+    .community-content__info-wrap.animated-block {
+        transform: translateX(-120px);
+    }
+    .community-content__info-wrap.animated-block[data-scroll="out"] {
+        transform: translateX(-120px);
+    }
+    .community-content__img-wrap.animated-block {
+        transform: translateX(120px);
+    }
+    .community-content__img-wrap.animated-block[data-scroll="out"] {
+        transform: translateX(120px);
+    }
 }
 
-.community-content__description-block{
-    margin-bottom: 32px;
+@media screen and (max-width: 500px) {
+    .community-content {
+        padding: 70px 0;
+        gap: 40px;
+    }
+
+    .community-content__headline {
+        font-size: 42px;
+    }
+
+    .community-content__description-text {
+        font-size: 16px;
+    }
+
+    .community-content__social-media .social-media__btn {
+        width: 56px;
+        height: 56px;
+    }
+
+    .community-content__moon-img {
+        max-width: 250px;
+    }
 }
 
-.community-content__description-text{
-    line-height: 1.3;
+@media screen and (max-width: 376px) {
+    .community-content__headline {
+        font-size: 36px;
+    }
+
+    .community-content__moon-img {
+        max-width: 210px;
+    }
+
+    .community-content__social-media .social-media__btn {
+        width: 48px;
+        height: 48px;
+    }
 }
 
-.community-content__description-text:first-child{
-    margin-bottom: 16px;
+@media screen and (max-width: 376px) and (max-height: 560px) {
+    .community-content {
+        padding: 40px 0;
+        gap: 32px;
+    }
+
+    .community-content__headline {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .community-content__description-block {
+        margin-bottom: 18px;
+    }
+
+    .community-content__description-text:first-child {
+        margin-bottom: 12px;
+    }
+
+    .community-content__moon-img {
+        max-width: 190px;
+    }
+
+    .animated-block {
+        transition: transform 0.6s ease;
+    }
 }
 
-.community-content__social-media{
-    display: flex;
-    flex-direction: row;
-    gap: 32px
+@media screen and (max-width: 350px) {
+    .community-content {
+        padding: 20px 0;
+        gap: 18px;
+    }
+    .community-content__headline {
+        font-size: 28px;
+    }
+
+    .community-content__description-text {
+        font-size: 14px;
+    }
+
+    .community-content__moon-img {
+        max-width: 175px;
+    }
 }
 
-.social-media__btn{
-    width: 64px;
-    height: 64px;
-    cursor: pointer;
+@media screen and (orientation: landscape) and (min-width: 480px) and (max-width: 1024px) and (max-height: 800px) {
+    .community-content {
+        flex-direction: row;
+        text-align: left;
+        padding: 40px 0;
+        gap: 16px;
+    }
+
+    .community-content__info-wrap {
+        align-items: flex-start;
+    }
+
+    .community-content__headline {
+        font-size: 42px;
+    }
+
+    .community-content__description-text{
+        font-size: 20px;
+    }
+
+    .community-content__moon-img {
+        max-width: 420px;
+    }
 }
 
-.community-content__img-wrap{
-    flex: 1 1 35%;
-    display: flex;
-    justify-content: flex-end;
+@media screen and (orientation: landscape) and (min-width: 480px) and (max-width: 950px) and (max-height: 500px) {
+    .community-content {
+        padding: 32px 0;
+        gap: 24px;
+    }
+
+    .community-content__headline {
+        font-size: 34px;
+    }
+
+    .community-content__moon-img {
+        max-width: 240px;
+    }
 }
 
-.community-content__moon-img{
-    width: 100%;
-    max-width: 460px;
-    height: auto;
-    object-fit: contain;
+@media screen and (orientation: landscape) and (min-width: 480px) and (max-width: 950px) and (max-height: 280px) {
+
+    .community-content {
+        padding: 24px 0;
+        gap: 16px;
+    }
+
+    .community-content__description-block{
+        margin-bottom: 18px;
+    }
+
+    .community-content__headline {
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
+
+    .community-content__description-text {
+        font-size: 14px;
+    }
+
+    .community-content__description-text:first-child {
+        margin-bottom: 12px;
+    }
+
+    .community-content__social-media {
+        gap: 18px;
+    }
+
+    .community-content__social-media .social-media__btn {
+        width: 26px;
+        height: 26px;
+    }
 }
 
-/* Стартовые состояния */
-.community-content__info-wrap.animated-block {
-    transform: translateY(120px);
-}
+@media screen and (orientation: landscape) and (min-width: 480px) and (max-width: 600px) and (max-height: 320px) {
 
-.community-content__img-wrap.animated-block {
-    transform: translateX(0); /* старт по центру */
-}
+    .community-content__headline {
+        font-size: 24px;
+    }
 
-/* Появление (ScrollOut) */
-.community-content__info-wrap.animated-block[data-scroll="in"] {
-    transform: translateY(0);
-}
-
-.community-content__img-wrap.animated-block[data-scroll="in"] {
-    transform: translateX(0);
-}
-
-/* Уход (ScrollOut) */
-.community-content__info-wrap.animated-block[data-scroll="out"] {
-    transform: translateY(-120px);
-}
-
-.community-content__img-wrap.animated-block[data-scroll="out"] {
-    transform: translateX(120px);
-}
-
-/* Плавность перехода */
-.animated-block {
-    transition: transform 0.8s ease;
-    will-change: transform;
+    .community-content__moon-img {
+        max-width: 150px;
+    }
 }

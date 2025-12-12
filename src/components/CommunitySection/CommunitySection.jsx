@@ -11,7 +11,7 @@ const CommunitySection = () => {
     useEffect(() => {
         const scroll = ScrollOut({
             targets: ".animated-block",
-            offset: 0, // срабатывание прямо при входе в viewport
+            offset: 0,
             once: false,
         });
 

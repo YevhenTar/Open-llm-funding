@@ -30,11 +30,11 @@ const LeaderboardSection = () => {
     let visibleRows;
 
     if (fullScrollMode) {
-        visibleRows = leaderboardData; // показываем все, но внутри будет скролл
+        visibleRows = leaderboardData;
     } else if (showRest) {
-        visibleRows = leaderboardData.slice(8); // строки с 9-й
+        visibleRows = leaderboardData.slice(8);
     } else {
-        visibleRows = leaderboardData.slice(0, 8); // первые 8
+        visibleRows = leaderboardData.slice(0, 8);
     }
 
     return (
@@ -54,34 +54,37 @@ const LeaderboardSection = () => {
                         The higher the score, the better the LLM.
                     </p>
                     <div className="leaderboard-content__main-table main-table">
-                        <div className="main-table__header row-grid">
-                            <div className='header-cell'></div>
-                            <div className='header-cell'>#</div>
-                            <div className='header-cell'>Model Name</div>
-                            <div className='header-cell'>Average</div>
-                            <div className='header-cell'>ARC</div>
-                            <div className='header-cell'>HellaSwag</div>
-                            <div className='header-cell'>MMLU</div>
-                            <div className='header-cell'>TruthfulQA</div>
-                            <div className='header-cell'>Winogrande</div>
-                            <div className='header-cell'>GSM8K</div>
-                            <div className='header-cell'>Usage</div>
-                        </div>
+                        <div className="main-table__hscroll">
+                            <div className="main-table__inner">
+                                <div className="main-table__header row-grid">
+                                    <div className='header-cell'></div>
+                                    <div className='header-cell'>#</div>
+                                    <div className='header-cell'>Model Name</div>
+                                    <div className='header-cell'>Average</div>
+                                    <div className='header-cell'>ARC</div>
+                                    <div className='header-cell'>HellaSwag</div>
+                                    <div className='header-cell'>MMLU</div>
+                                    <div className='header-cell'>TruthfulQA</div>
+                                    <div className='header-cell'>Winogrande</div>
+                                    <div className='header-cell'>GSM8K</div>
+                                    <div className='header-cell'>Usage</div>
+                                </div>
 
-                        <div
-                            className={`main-table__body ${
-                                fullScrollMode ? "scroll-mode" : ""
-                            }`}
-                        >
-                            {visibleRows.map((item) => (
-                                <LeaderboardRow key={item.id} item={item} />
-                            ))}
+                                <div
+                                    className={`main-table__body ${
+                                        fullScrollMode ? "scroll-mode" : ""
+                                    }`}
+                                >
+                                    {visibleRows.map((item) => (
+                                        <LeaderboardRow key={item.id} item={item} />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                         <div className="main-table__button-block">
                             {leaderboardData.length > 8 && (
                                 <>
-                                    {/* Левая кнопка */}
                                     {showRest && (
                                         <button
                                             className={`full-leaderboard-btn ${fullScrollMode ? "active" : ""}`}
@@ -91,7 +94,6 @@ const LeaderboardSection = () => {
                                         </button>
                                     )}
 
-                                    {/* Стрелка */}
                                     <button
                                         className={`main-table__button ${showRest ? "expanded" : ""} ${
                                             isDisabled ? "disabled" : ""

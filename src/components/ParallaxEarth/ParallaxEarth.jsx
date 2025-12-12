@@ -9,51 +9,52 @@ gsap.registerPlugin(ScrollTrigger);
 const ParallaxEarth = () => {
     const earthRef = useRef(null);
 
-    // useLayoutEffect(() => {
-    //     if (!earthRef.current) return;
-
-    //     const speed = 0.6;
-
-    //     // GSAP с ScrollTrigger для движения Земли при прокрутке
-    //     gsap.to(earthRef.current, {
-    //         y: () => (document.body.scrollHeight * 0.1 * speed),
-    //         ease: "none",
-    //         scrollTrigger: {
-    //             trigger: ".earth-section-wrapper", // Земля активна только внутри wrapper
-    //             start: "top top",
-    //             end: "bottom bottom",
-    //             scrub: true
-    //         }
-    //     });
-    // }, []);
-
     useLayoutEffect(() => {
         const el = earthRef.current;
         if (!el) return;
 
-        // стартовое смещение
-        gsap.set(el, { 
-            y: -435
-        });
+        const mm = gsap.matchMedia();
 
-        const ctx = gsap.context(() => {
+        mm.add(
+            {
+                desktop: "(min-width: 1025px)",
+                tablet: "(max-width: 1024px) and (max-height: 1366px)",
+                tabletLandscape: "(orientation: landscape) and (min-width: 480px) and (max-width: 1024px) and (max-height: 800px)",
+                mobile: "(max-width: 500px)",
+                mobileSmall: "(max-width: 376px) and (max-height: 560px)",
+                mobileExtraSmall: "(max-width: 350px)",
+                mobileLandscape: "(orientation: landscape) and (min-width: 480px) and (max-width: 950px) and (max-height: 500px)"
+            },
+            (context) => {
+                let { tablet, tabletLandscape, mobile, mobileSmall, mobileExtraSmall, mobileLandscape } = context.conditions;
 
-            gsap.to(el, {
-                y: 0,              // ← правильное конечное значение
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".community-section",
-                    start: "center center",
-                    endTrigger: ".footer-section",
-                    end: "bottom bottom",
-                    scrub: true     // моментальный отклик
-                }
-            });
+                let startY = -435; 
+                if (tablet) startY = -800;
+                if (tabletLandscape) startY = -475;
+                if (mobile) startY = -630;
+                if (mobileSmall) startY = -500;
+                if (mobileExtraSmall) startY = -390;
+                if (mobileLandscape) startY = -100;
 
-        });
+                gsap.set(el, { y: startY });
 
-        return () => ctx.revert();
+                gsap.to(el, {
+                    y: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".community-section",
+                        start: "center center",
+                        endTrigger: ".footer-section",
+                        end: "bottom bottom",
+                        scrub: true
+                    }
+                });
+            }
+        );
+
+        return () => mm.revert(); 
     }, []);
+
 
     return (
         <img

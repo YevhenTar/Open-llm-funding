@@ -31,7 +31,6 @@ const ProjectsSection = () => {
         const track = trackRef.current;
         if (!track) return;
 
-        // Дублируем ленту
         track.innerHTML += track.innerHTML;
 
         const items = Array.from(track.querySelectorAll(".carousel__item"));
@@ -41,7 +40,6 @@ const ProjectsSection = () => {
             .slice(0, halfCount)
             .reduce((sum, el) => sum + el.offsetWidth + 64, 0);
 
-        // Начальное смещение
         gsap.set(track, { x: 0 });
 
         ScrollTrigger.create({
@@ -53,8 +51,6 @@ const ProjectsSection = () => {
                 const progress = self.progress;
                 let shift = -firstHalfWidth * progress;
 
-                // Без процентов: если сдвиг больше ширины первой половины,
-                // просто "переносим" ленту на начало
                 while (shift <= -firstHalfWidth) shift += firstHalfWidth;
                 while (shift > 0) shift -= firstHalfWidth;
 

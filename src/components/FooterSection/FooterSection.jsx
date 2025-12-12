@@ -14,7 +14,7 @@ const FooterSection = ({ onLinkClick }) => {
 
         const so = ScrollOut({
             targets: sectionRef.current,
-            threshold: 0.75, // можно подправить, чтобы событие срабатывало чуть раньше
+            threshold: 0.75,
             onShown: () => {
                 headline.classList.add("enter");
                 headline.classList.remove("leave");

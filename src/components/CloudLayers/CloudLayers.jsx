@@ -42,14 +42,13 @@ const CloudLayers = ({ isActivated }) => {
             const poseBlue = scrollY > THRESHOLD ? ACTIVE_BLUE.current : DEFAULT.current;
             const poseBrown = scrollY > THRESHOLD ? ACTIVE_BROWN.current : DEFAULT.current;
 
-            // вычисляем вертикальный параллакс, ускоренный
             const speed = 1.8;
             const parallaxYBlue = -scrollY * speed;
-            const parallaxYBrown = -scrollY * speed * 0.7; // глубина
+            const parallaxYBrown = -scrollY * speed * 0.7; 
 
             gsap.to(blueImg.current, {
                 ...poseBlue,
-                y: poseBlue.y + parallaxYBlue, // прибавляем вертикальный параллакс
+                y: poseBlue.y + parallaxYBlue,
                 duration: 0.6,
                 ease: "power3.out"
             });
