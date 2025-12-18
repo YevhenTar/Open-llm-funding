@@ -17,7 +17,7 @@ const HeroSection = ({ onActivate }) => {
                         className='button button_small button_scroll-activate' 
                         data-text="Show info"
                         onClick={handleActivate}
-                    >How It Works</button>
+                    >Show info</button>
                     <button 
                         className='button button_small button_buy-salt-ai'
                         onClick={() => alert('Button click is working')}
@@ -36,7 +36,7 @@ const HeroSection = ({ onActivate }) => {
                                 className='button button_medium button_scroll-activate' 
                                 data-text="Show info"
                                 onClick={handleActivate}
-                            >Try now</button>
+                            >Show info</button>
                         </div>
                     </div>
                     {isActive && (
