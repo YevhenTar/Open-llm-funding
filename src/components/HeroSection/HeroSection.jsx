@@ -15,7 +15,7 @@ const HeroSection = ({ onActivate }) => {
                 <div className='buttons-wrap main-block__buttons-wrap'>
                     <button 
                         className='button button_small button_scroll-activate' 
-                        data-text="How It Works"
+                        data-text="Show info"
                         onClick={handleActivate}
                     >How It Works</button>
                     <button 
@@ -34,7 +34,7 @@ const HeroSection = ({ onActivate }) => {
                             >Buy Salt AI</button>
                             <button 
                                 className='button button_medium button_scroll-activate' 
-                                data-text="Try now"
+                                data-text="Show info"
                                 onClick={handleActivate}
                             >Try now</button>
                         </div>
